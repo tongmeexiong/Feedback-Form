@@ -7,14 +7,26 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 
-const firstReducer = (state = [], type) => {
+const firstFormReducer = (state = [], type) => {
+    return state
+}
+const secondFormReducer = (state = [], type) => {
+    return state
+}
+const thirdFormReducer = (state = [], type) => {
+    return state
+}
+const forthFormReducer = (state = [], type) => {
     return state
 }
 
 const storeInstance = createStore(
 
     combineReducers({
-        firstReducer
+        firstFormReducer,
+        secondFormReducer,
+        thirdFormReducer,
+        forthFormReducer
     }),
     applyMiddleware(logger)
 )
