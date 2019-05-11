@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 
 class SecondForm extends React.Component {
@@ -12,24 +12,26 @@ class SecondForm extends React.Component {
         this.setState({
             inputField: event.target.value
         })
-        // this.props.dispatch({ type: 'FIRST_FORM', pageLoad: this.state.inputField }) 
     }
 
     sendData = (event) => {
         event.preventDefault();
         this.props.dispatch({ type: 'SECOND_FORM', payLoad: this.state })
-        this.props.history.push('/second')
+        this.props.history.push('/third')
     }
 
 
-    render(){
+    render() {
+        console.log(this.state);
         return (
             <div>
-            <h1>How well are you understanding the content?</h1>
-            <input type="number" placeholder="rate" />
-                <button> NEXT </button>
+                <form onSubmit={this.sendData}>
+                    <h1>How well are you understanding the content?</h1>
+                    <input onChange={this.handleInput} type="number" placeholder="rate" />
+                    <button type="submit"> NEXT </button>
+                </form>
             </div>
-           
+
         )
     }
 }

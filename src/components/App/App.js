@@ -8,6 +8,7 @@ import Header from '../Header/Header'
 import SecondForm from '../SecondForm/SecondForm'
 import ThirdForm from '../ThirdForm/ThirdForm'
 import FourthForm from '../FourthForm/FourthForm'
+import LastReviewForm from '../LastReviewForm/LastReviewForm'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 
@@ -21,7 +22,8 @@ class App extends Component {
           <Route exact path='/' component={FirstForm} />
           <Route exact path='/second' component={SecondForm} />
           <Route exact path='/third' component={ThirdForm} />
-          <Route exact path='/third' component={FourthForm} />
+          <Route exact path='/fourth' component={FourthForm} />
+          <Route exact path='/review' component={LastReviewForm} />
           <br />
           <ReviewForm />
         </div>
