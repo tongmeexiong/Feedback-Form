@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import ReviewForm from '../ReviewForm/ReviewForm'
+
 
 
 class ThirdForm extends React.Component {
     state = {
-        inputField: ''
+        support: ''
     }
 
     handleInput = (event) => {
         this.setState({
-            inputField: event.target.value
+            support: event.target.value
         })
     }
 
@@ -29,6 +31,8 @@ class ThirdForm extends React.Component {
                 <input onChange={this.handleInput} type="number" placeholder="rate" />
                 <button type="submit"> NEXT </button>
                 </form>
+                <ReviewForm />
+
             </div>
 
         )

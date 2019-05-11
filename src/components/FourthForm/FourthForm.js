@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import ReviewForm from '../ReviewForm/ReviewForm'
+
 
 
 class FourthForm extends React.Component {
     state = {
-        inputField: ''
+        comments: ''
     }
 
     handleInput = (event) => {
         this.setState({
-            inputField: event.target.value
+            comments: event.target.value
         })
     }
 
@@ -27,6 +29,8 @@ class FourthForm extends React.Component {
                 <input onChange={this.handleInput}  type="text" placeholder="comments" />
                 <button type="submit"> NEXT </button>
                 </form>
+                <ReviewForm />
+
             </div>
 
         )

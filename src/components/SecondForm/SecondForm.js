@@ -1,16 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import ReviewForm from '../ReviewForm/ReviewForm'
+
 
 
 class SecondForm extends React.Component {
 
     state = {
-        inputField: ''
+        understanding: ''
     }
 
     handleInput = (event) => {
         this.setState({
-            inputField: event.target.value
+            understanding: event.target.value
         })
     }
 
@@ -30,6 +32,7 @@ class SecondForm extends React.Component {
                     <input onChange={this.handleInput} type="number" placeholder="rate" />
                     <button type="submit"> NEXT </button>
                 </form>
+                <ReviewForm />
             </div>
 
         )

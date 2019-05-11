@@ -6,16 +6,40 @@ class ReviewForm extends React.Component {
         return (
 
             <div>
+                <h1>REVIEW YOUR FEED BACK</h1>
                 <ul>
-                {/* {this.props.firstFormReducer.map((first)=>{
-                    return (
-                    <li>first</li>
-                    )
-                })} */}
-                </ul>                        
+                    {/* {this.props.reduxState.testFormReducer.map((data, i) => {
+                        return (
+                            <li key={i}>Feelings: {data.feeling}
+                                Understanding: {data.understanding}
+                                Support: {data.support}
+                                Comments: {data.comment}</li>
+                        )
+                    })} */}
+                    {this.props.firstForm.map((first, i) => {
+                        return (
+                            <li key={i}>Feelings: {[first.feeling]}</li>
+                        )
+                    })}
+                    {this.props.secondForm.map((second, i) => {
+                        return (
+                            <li key={i}>Understanding:{second.understanding}</li>
+                        )
+                    })}
+                    {this.props.thirdForm.map((third, i) => {
+                        return (
+                            <li key={i}>Support:{third.support}</li>
+                        )
+                    })}
+                    {this.props.fourthForm.map((fourth, i) => {
+                        return (
+                            <li key={i}>Comments:{fourth.comments}</li>
+                        )
+                    })}
+
+                </ul>       
 
                 <button>INCOMPLETE</button>
-
             </div>
         );
     }
@@ -23,6 +47,7 @@ class ReviewForm extends React.Component {
 
 const mapToReduxState = (reduxState) => {
     return {
+        // reduxState
         firstForm: reduxState.firstFormReducer,
         secondForm: reduxState.secondFormReducer,
         thirdForm: reduxState.thirdFormReducer,
