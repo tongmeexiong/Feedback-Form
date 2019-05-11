@@ -4,19 +4,22 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware, bindActionCreators } from 'redux'
 import logger from 'redux-logger'
 
-const firstFormReducer = (state = [], type) => {
+const firstFormReducer = (state = [], action) => {
+    if (action.type === 'FIRST_FORM'){
+        return action.payLoad.inputField
+    }
     return state
 }
-const secondFormReducer = (state = [], type) => {
+const secondFormReducer = (state = [], action) => {
     return state
 }
-const thirdFormReducer = (state = [], type) => {
+const thirdFormReducer = (state = [], action) => {
     return state
 }
-const forthFormReducer = (state = [], type) => {
+const forthFormReducer = (state = [], action) => {
     return state
 }
 
