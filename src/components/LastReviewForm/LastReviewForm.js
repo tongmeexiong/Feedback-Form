@@ -60,7 +60,7 @@ sendCompletedData = (event) =>{
                                 Comments: {data.comment}</li>
                             )
                         })} */}
-                    {this.props.firstForm.map((first, i) => {
+                    {/* {this.props.firstForm.map((first, i) => {
                         return (
                             <li key={i}>Feelings: {[first.feeling]}</li>
                         )
@@ -79,7 +79,7 @@ sendCompletedData = (event) =>{
                         return (
                             <li key={i}>Comments:{fourth.comments}</li>
                         )
-                    })}
+                    })} */}
 
                 </ul>
 
@@ -92,11 +92,11 @@ sendCompletedData = (event) =>{
 
 const mapToReduxState = (reduxState) => {
     return {
-        // reduxState
-        firstForm: reduxState.firstFormReducer,
-        secondForm: reduxState.secondFormReducer,
-        thirdForm: reduxState.thirdFormReducer,
-        fourthForm: reduxState.forthFormReducer
+        reduxState
+        // firstForm: reduxState.firstFormReducer,
+        // secondForm: reduxState.secondFormReducer,
+        // thirdForm: reduxState.thirdFormReducer,
+        // fourthForm: reduxState.forthFormReducer
     }
 }
 

@@ -10,14 +10,16 @@ class ThirdForm extends React.Component {
     }
 
     handleInput = (event) => {
+        let number = parseInt(event.target.value)
+
         this.setState({
-            support: event.target.value
+            support: number
         })
     }
 
     sendData = (event) => {
         event.preventDefault();
-        this.props.dispatch({ type: 'THIRD_FORM', payLoad: this.state })
+        this.props.dispatch({ type: "FEED_BACK", payLoad: this.state })
         this.props.history.push('/fourth')
     }
 
