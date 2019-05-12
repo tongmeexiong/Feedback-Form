@@ -9,7 +9,7 @@ sendCompletedData = (event) =>{
     axios({
         method: 'POST',
         url: '/feedback',
-        data: {feeling: this.props.firstForm }
+        data: {feeling: this.props.firstForm.feeling }
     }).then((response) => {
                console.log('POST', response);
 
