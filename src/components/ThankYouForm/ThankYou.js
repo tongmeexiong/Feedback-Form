@@ -13,7 +13,7 @@ class ThankYouForm extends React.Component {
         return (
             <div>
                 <p>YAY!</p>
-            <button onClick={this.handleHomeButton} >Go Back!</button>
+            <button onClick={this.handleHomeButton} >Leave new feedback</button>
             </div>
         )
     }
