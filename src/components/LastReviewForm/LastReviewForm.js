@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
+
 
 class LastReviewForm extends React.Component {
 
@@ -15,7 +17,9 @@ sendCompletedData = (event) =>{
         this.props.history.push('/thankyou')
 
     }).catch((err) => {
-        alert(err)
+        alert('You did not fill out the entire form!', err)
+        this.props.history.push('/')
+
     })
 }
 
@@ -39,7 +43,8 @@ sendCompletedData = (event) =>{
                     
                 </ul>
 
-                <button type="submit">Complete</button>
+                    <Button variant="contained" color="secondary" className={Button} type="submit">Complete</Button>
+
                 </form>
             </div>
         );

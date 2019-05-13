@@ -26,7 +26,7 @@ class FourthForm extends React.Component {
             <div>
                 <form onSubmit={this.sendData}>
                 <h1>Any comments you want to leave?</h1>
-                <input onChange={this.handleInput}  type="text" placeholder="comments" />
+                    <input onChange={this.handleInput} type="text" placeholder="comments" required/>
                 <button type="submit"> NEXT </button>
                 </form>
                 <ReviewForm />

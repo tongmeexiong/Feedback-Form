@@ -31,7 +31,7 @@ class SecondForm extends React.Component {
             <div>
                 <form onSubmit={this.sendData}>
                     <h1>How well are you understanding the content?</h1>
-                    <input onChange={this.handleInput} type="number" placeholder="rate" />
+                    <input onChange={this.handleInput} type="number" placeholder="rate" required/>
                     <button type="submit"> NEXT </button>
                 </form>
                 <ReviewForm />

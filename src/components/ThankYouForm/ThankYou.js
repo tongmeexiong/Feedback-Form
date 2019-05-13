@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+
 
 
 class ThankYouForm extends React.Component {
@@ -12,8 +14,9 @@ class ThankYouForm extends React.Component {
     render() {
         return (
             <div>
-                <p>YAY!</p>
-            <button onClick={this.handleHomeButton} >Leave new feedback</button>
+                <h1>Thank you for Submitting your Response!</h1>
+                <Button onClick={this.handleHomeButton} variant="contained" color="primary" className={Button} type="submit">Leave new feedback</Button>
+
             </div>
         )
     }

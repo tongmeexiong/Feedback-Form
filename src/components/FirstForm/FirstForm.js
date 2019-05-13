@@ -15,7 +15,6 @@ class FirstForm extends React.Component {
         this.setState({
             feeling: number
         })
-        // this.props.dispatch({ type: 'FIRST_FORM', pageLoad: this.state.inputField }) 
     }    
 
     sendData =(event)=>{
@@ -32,7 +31,8 @@ class FirstForm extends React.Component {
             <div>
                 <h1>How are you feeling today?</h1>
                 <form onSubmit={this.sendData}>
-                <input onChange={this.handleInput} type="number" placeholder="rate" />
+                    <input onChange={this.handleInput} type="number" placeholder="rate" required/>
+
                     <button type="submit"> NEXT </button>
                 </form>
                 <ReviewForm />

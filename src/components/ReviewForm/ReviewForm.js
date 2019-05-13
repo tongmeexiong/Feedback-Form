@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 
 class ReviewForm extends React.Component {
@@ -15,30 +16,11 @@ class ReviewForm extends React.Component {
                         <li>Comments: {this.props.feedBack.comments}</li>
 
                     </ul>
-                    {/* {this.props.firstForm.map((first, i) => {
-                        return (
-                            <li key={i}>Feelings: {[first.feeling]}</li>
-                        )
-                    })}
-                    {this.props.secondForm.map((second, i) => {
-                        return (
-                            <li key={i}>Understanding:{second.understanding}</li>
-                        )
-                    })}
-                    {this.props.thirdForm.map((third, i) => {
-                        return (
-                            <li key={i}>Support:{third.support}</li>
-                        )
-                    })}
-                    {this.props.fourthForm.map((fourth, i) => {
-                        return (
-                            <li key={i}>Comments:{fourth.comments}</li>
-                        )
-                    })} */}
+              
 
                 </ul>       
 
-                <button>INCOMPLETE</button>
+                <Button variant="outlined" disabled className={Button}>INCOMPLETE</Button>
             </div>
         );
     }
