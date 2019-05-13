@@ -7,57 +7,40 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, } from 'redux'
 import logger from 'redux-logger'
 
-const feedback = []
+const feedback = 
 
-// {
-//     feeling: '',
-//     understanding: '',
-//     supoort: '',
-//     comments: '',
+{
+    feeling: '',
+    understanding: '',
+    support: '',
+    comments: '',
 
-// }
-
-// const testFormReducer = (state = feedback, action) => {
-//     if (action.type === "FIRST_FORM"){
-//         return {
-//                  ...state,
-//                   [action.name]: action.payload
-//                  }
-//     }
-//     return state
-
-// }
-
-    // switch (action.type) {
-    //     case 'FIRST_FORM':
-    //         return  {
-    //              ...state,
-    //               feeling: action.payload
-    //              }
-    
-    //     case 'SECOND_FORM':
-    //         return {
-    //             ...state,
-    //             [action.name]: action.payload
-    //         }        // case 'THIRD_FORM':
-    //     //     return [...state, feedback.supoort = action.payLoad];
-    //     // case 'FOURTH_FORM':
-    //     //     return [...state, feedback.comments = action.payLoad];
-    //     default:
-    //         return state;
-    // }
-// }
-
-
+}
 
 const firstFormReducer = (state = feedback, action) => {
     if (action.type === "FEED_BACK") {
-        return [...state, action.payLoad]
+        return {...state,
+             [action.name]: action.payLoad}
+        
     }  
+    else if (action.type === 'CLEAR_ALL') {
+        return {
+            feeling: '',
+            understanding: '',
+            support: '',
+            comments: ''
+        }
 
-    return state
+    }
+        return state
 
-}
+    }
+
+    
+
+
+
+
 
 // const secondFormReducer = (state = feedback, action) => {
 //     if (action.type === "SECOND_FORM") {
@@ -88,11 +71,45 @@ console.log('this is the feedback now ', feedback);
 //     return state
 // }
 
+
+// const testFormReducer = (state = feedback, action) => {
+//     if (action.type === "FIRST_FORM"){
+//         return {
+//                  ...state,
+//                   [action.name]: action.payload
+//                  }
+//     }
+//     return state
+
+// }
+
+    // switch (action.type) {
+    //     case 'FIRST_FORM':
+    //         return  {
+    //              ...state,
+    //               feeling: action.payload
+    //              }
+
+    //     case 'SECOND_FORM':
+    //         return {
+    //             ...state,
+    //             [action.name]: action.payload
+    //         }        // case 'THIRD_FORM':
+    //     //     return [...state, feedback.supoort = action.payLoad];
+    //     // case 'FOURTH_FORM':
+    //     //     return [...state, feedback.comments = action.payLoad];
+    //     default:
+    //         return state;
+    // }
+// }
+
+
+
 const storeInstance = createStore(
 
     combineReducers({
         // testFormReducer,
-        firstFormReducer,
+        firstFormReducer
         // secondFormReducer
         // thirdFormReducer,
         // forthFormReducer

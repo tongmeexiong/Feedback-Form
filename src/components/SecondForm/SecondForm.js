@@ -20,7 +20,7 @@ class SecondForm extends React.Component {
 
     sendData = (event) => {
         event.preventDefault();
-        this.props.dispatch({ type: "FEED_BACK", payLoad: this.state, name: 'understanding' })
+        this.props.dispatch({ type: "FEED_BACK", payLoad: this.state.understanding, name: 'understanding' })
         this.props.history.push('/third')
     }
 

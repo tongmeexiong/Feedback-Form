@@ -8,14 +8,13 @@ class ReviewForm extends React.Component {
             <div>
                 <h1>REVIEW YOUR FEED BACK</h1>
                 <ul>
-                    {/* {this.props.reduxState.testFormReducer.map((data, i) => {
-                        return (
-                            <li key={i}>Feelings: {data.feeling}
-                                Understanding: {data.understanding}
-                                Support: {data.support}
-                                Comments: {data.comment}</li>
-                        )
-                    })} */}
+                    <ul>
+                        <li>Feeling: {this.props.feedBack.feeling}</li>
+                        <li>Understanding: {this.props.feedBack.understanding}</li>
+                        <li>Support: {this.props.feedBack.support}</li>
+                        <li>Comments: {this.props.feedBack.comments}</li>
+
+                    </ul>
                     {/* {this.props.firstForm.map((first, i) => {
                         return (
                             <li key={i}>Feelings: {[first.feeling]}</li>
@@ -45,13 +44,13 @@ class ReviewForm extends React.Component {
     }
 }
 
+
+
 const mapToReduxState = (reduxState) => {
     return {
-        reduxState
-        // firstForm: reduxState.firstFormReducer,
-        // secondForm: reduxState.secondFormReducer,
-        // thirdForm: reduxState.thirdFormReducer,
-        // fourthForm: reduxState.forthFormReducer
+
+        feedBack: reduxState.firstFormReducer,
+
     }
 }
 

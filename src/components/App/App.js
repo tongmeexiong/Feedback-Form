@@ -7,6 +7,7 @@ import SecondForm from '../SecondForm/SecondForm'
 import ThirdForm from '../ThirdForm/ThirdForm'
 import FourthForm from '../FourthForm/FourthForm'
 import LastReviewForm from '../LastReviewForm/LastReviewForm'
+import ThankYouForm from '../ThankYouForm/ThankYou'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
 
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path='/third' component={ThirdForm} />
           <Route exact path='/fourth' component={FourthForm} />
           <Route exact path='/review' component={LastReviewForm} />
+          <Route exact path='/thankyou' component={ThankYouForm} />
           <br />
         </div>
       </Router>

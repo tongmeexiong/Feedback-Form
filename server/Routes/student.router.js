@@ -5,6 +5,7 @@ const pool = require('../modules/pool');
 
 
 router.post('/', (req, res) => {
+
     const studentData = req.body;
     console.log('req is', studentData);
     const queryText = `
@@ -16,7 +17,7 @@ router.post('/', (req, res) => {
             console.log(result.rows);
             res.sendStatus(201);
         }).catch((error) => {
-            console.log(`error in POST /koalas`, error);
+            console.log(`error in POST `, error);
             res.sendStatus(500);
         })
 })

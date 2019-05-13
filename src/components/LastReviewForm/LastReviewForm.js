@@ -9,36 +9,16 @@ sendCompletedData = (event) =>{
     axios({
         method: 'POST',
         url: '/feedback',
-        data: {feeling: this.props.firstForm.feeling }
+        data: this.props.feedBack
     }).then((response) => {
                console.log('POST', response);
+        this.props.history.push('/thankyou')
 
     }).catch((err) => {
         alert(err)
     })
 }
 
-
-
-
-//     event.preventDefault();
-//     axios.post ({
-//         method: 'POST',
-//         url: '/feedback',
-//         data: { feeling: this.props.firstForm.payLoad.feeling},
-//         // {understanding: this.props.secondForm },
-//         // { support: this.props.thirdForm },
-//         // { comments: this.props.fourthForm }
-            
-//     })
-//     .then((response)=>{
-//         console.log('POST', response);
-        
-//     })
-//     .catch((err)=>{
-//         console.log('POST NOT WORKING', err);
-//     })
-// }
 
 
 
@@ -52,35 +32,11 @@ sendCompletedData = (event) =>{
                 <h1>YOU ARE DONE!REVIEW YOUR FEEDBACK! </h1>
                 <form onSubmit={this.sendCompletedData}>
                 <ul>
-                        {/* {this.props.reduxState.testFormReducer.map((data, i) => {
-                            return (
-                                <li key={i}>Feelings: {data.feeling}
-                                Understanding: {data.understanding}
-                                Support: {data.support}
-                                Comments: {data.comment}</li>
-                            )
-                        })} */}
-                    {/* {this.props.firstForm.map((first, i) => {
-                        return (
-                            <li key={i}>Feelings: {[first.feeling]}</li>
-                        )
-                    })}
-                    {this.props.secondForm.map((second, i) => {
-                        return (
-                            <li key= { i }>Understanding:{second.understanding}</li>
-                        )
-                    })}
-                    {this.props.thirdForm.map((third,i) => {
-                        return (
-                            <li key={i}>Support:{third.support}</li>
-                        )
-                    })}
-                    {this.props.fourthForm.map((fourth, i) => {
-                        return (
-                            <li key={i}>Comments:{fourth.comments}</li>
-                        )
-                    })} */}
-
+                        <li>Feeling: {this.props.feedBack.feeling}</li>
+                        <li>Understanding: {this.props.feedBack.understanding}</li>
+                        <li>Support: {this.props.feedBack.support}</li>
+                        <li>Comments: {this.props.feedBack.comments}</li>
+                    
                 </ul>
 
                 <button type="submit">Complete</button>
@@ -92,11 +48,9 @@ sendCompletedData = (event) =>{
 
 const mapToReduxState = (reduxState) => {
     return {
-        reduxState
-        // firstForm: reduxState.firstFormReducer,
-        // secondForm: reduxState.secondFormReducer,
-        // thirdForm: reduxState.thirdFormReducer,
-        // fourthForm: reduxState.forthFormReducer
+       
+        feedBack: reduxState.firstFormReducer,
+       
     }
 }
 

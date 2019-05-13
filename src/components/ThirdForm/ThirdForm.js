@@ -19,7 +19,7 @@ class ThirdForm extends React.Component {
 
     sendData = (event) => {
         event.preventDefault();
-        this.props.dispatch({ type: "FEED_BACK", payLoad: this.state })
+        this.props.dispatch({ type: "FEED_BACK", payLoad: this.state.support, name: 'support' })
         this.props.history.push('/fourth')
     }
 

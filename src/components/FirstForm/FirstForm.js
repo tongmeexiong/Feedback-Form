@@ -7,7 +7,7 @@ import ReviewForm from '../ReviewForm/ReviewForm'
 class FirstForm extends React.Component {
 
     state={
-        feeling: {}
+        feeling: ''
     }
 
     handleInput = (event) =>{
@@ -20,7 +20,7 @@ class FirstForm extends React.Component {
 
     sendData =(event)=>{
         event.preventDefault();
-        this.props.dispatch({ type: "FEED_BACK", payLoad:  this.state, name: 'feeling' })
+        this.props.dispatch({ type: "FEED_BACK", payLoad:  this.state.feeling, name: 'feeling' })
         this.props.history.push('/second')
     }
     

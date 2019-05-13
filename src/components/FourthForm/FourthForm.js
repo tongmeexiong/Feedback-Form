@@ -17,7 +17,7 @@ class FourthForm extends React.Component {
 
     sendData = (event) => {
         event.preventDefault();
-        this.props.dispatch({ type: "FEED_BACK", payLoad: this.state })
+        this.props.dispatch({ type: "FEED_BACK", payLoad: this.state.comments, name: 'comments' })
         this.props.history.push('/review')
     }
 
